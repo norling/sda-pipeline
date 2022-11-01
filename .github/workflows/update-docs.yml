@@ -1,0 +1,20 @@
+name: Update documentation
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+
+  build:
+    name: Trigger documentation rebuild in neic-sda
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          result=$(curl -X POST \
+          -H "Authorization: Bearer ${{secrets.NEIC_SDA_ACCESS}}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/norling/neic-sda/actions/workflows/aggregate.yml/dispatches \
+          -d '{"ref": "master"}')
+          [ -z "$result" ] && return 0 || return 1

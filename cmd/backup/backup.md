@@ -46,3 +46,5 @@ writer.
 to the logs, and the message is neither nack'ed nor ack'ed.
 
 1. The message is Ack'ed.
+
+## Connections

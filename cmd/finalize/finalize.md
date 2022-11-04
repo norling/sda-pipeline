@@ -29,3 +29,7 @@ Nack'ed, and an error message is written to the RabbitMQ error queue.
 the logs.
 
 1. The original RabbitMQ message is Ack'ed.
+
+## Connections
+
+Lots of useful things.
